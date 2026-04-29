@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive | Operation Shadow Pipeline</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap');
+        body {
+            background-color: #ffffff;
+            color: #1a1a1a;
+            font-family: 'Inter', sans-serif;
+            padding: 8vw;
+            line-height: 1.6;
+        }
+        .terminal-header {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #4b5563;
+            background-color: #f9fafb;
+            padding: 1.25rem;
+            border-left: 3px solid #000;
+            margin-bottom: 2.5rem;
+        }
+        a { color: #0000ee; text-decoration: underline; }
+        .hint-text { color: #6b7280; font-size: 0.85rem; font-style: italic; }
+    </style>
+</head>
+<body class="max-w-2xl mx-auto">
+
+    <!-- <div class="terminal-header">
+        $ cat /archives/devops/challenge_01.md<br>
+        [CLASSIFIED] Internal Security Audit - Task #402<br>
+        [TARGET] https://github.com/magarmach-hash/devops-ctf-challenge
+    </div> -->
+
+    <h1 class="text-3xl font-black tracking-tighter mb-8 italic">The Shadow Pipeline</h1>
+
+    <div class="space-y-8">
+        <section>
+            <p class="font-bold">The Premise:</p>
+            <p>SecureCorp thinks their production flag is safe because it's stored as a GitHub Secret. They're wrong. The build pipeline they're using trusts anyone who sends a Pull Request.</p>
+        </section>
+
+        <section>
+            <p class="font-bold">The Goal:</p>
+            <p>Exfiltrate the value of <code class="bg-gray-100 px-1 font-mono">PROD_FLAG</code> from the GitHub Actions environment.</p>
+        </section>
+
+        <section>
+            <p class="font-bold">The Rules:</p>
+            <ul class="list-disc ml-5 space-y-2">
+                <li>Fork the repository.</li>
+                <li>Submit a Pull Request.</li>
+                <li>Extract the secret via the Actions logs.</li>
+            </ul>
+        </section>
+
+        <section class="pt-4">
+            <a href="https://github.com/magarmach-hash/devops-ctf-challenge" class="text-xl font-bold">[ ACCESS TARGET REPO ]</a>
+        </section>
+
+        <section class="border-t border-gray-100 pt-8">
+            <p class="hint-text">
+                Note: GitHub's secret scrubber will try to hide the flag. If you try to print it directly, it will just show up as ***. You'll need to encode it (Base64 is usually enough) to sneak it past the filter.
+            </p>
+        </section>
+    </div>
+
+    <footer class="mt-20 opacity-30 text-[10px]">
+        ID: DEVOPS-PIPELINE-POISONING
+    </footer>
+
+</body>
+</html>

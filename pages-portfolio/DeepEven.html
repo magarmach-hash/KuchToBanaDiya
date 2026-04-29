@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYS.LOG :: DEEPEVEN v1.0 :: TECH_DOCS</title>
+    <style>
+        /* CORE MONOCHROME SYSTEM */
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            line-height: 1.4;
+            margin: 0;
+            padding: 40px;
+            overflow-x: hidden;
+        }
+
+        /* 2-COLUMN LAYOUT */
+        .grid-master {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .grid-master { grid-template-columns: 1fr; gap: 20px; }
+            body { padding: 15px; }
+        }
+
+        /* TYPOGRAPHY */
+        h1, h2, h3, h4 { font-weight: 700; text-transform: uppercase; margin-top: 0; }
+        h1 { font-size: 24px; letter-spacing: -1px; }
+        h2 { font-size: 16px; border-bottom: 2px solid #000; padding-bottom: 2px; }
+        h3 { font-size: 13px; color: #555; }
+
+        a { color: #000; text-decoration: underline; font-weight: 700; }
+        a:hover { background-color: #000; color: #fff; text-decoration: none; }
+
+        /* BRUTALIST BLOCKS */
+        .system-block {
+            border: 1px solid #000;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .data-stream {
+            background: #f0f0f0;
+            border: 1px dashed #000;
+            padding: 10px;
+            word-wrap: break-word;
+        }
+
+        /* INPUT SYSTEM */
+        input[type="number"] {
+            width: 100%;
+            background: #fff;
+            color: #000;
+            border: 2px solid #000;
+            padding: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 16px;
+            font-weight: 700;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+
+        button {
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        button:hover { background-color: #333; }
+        button:disabled { background-color: #aaa; cursor: wait; }
+
+        /* Complex Schematic SVG Styling */
+        svg {
+            border: 1px solid #000;
+            background: #fff;
+            width: 100%;
+            height: auto;
+        }
+
+        .node { fill: #fff; stroke: #000; stroke-width: 1; }
+        .node-active { fill: #000; stroke: #000; }
+        .line { stroke: #000; stroke-width: 0.5; stroke-dasharray: 2,2; }
+        .weight-text { font-size: 6px; font-family: monospace; fill: #555; }
+        .label { font-size: 8px; font-family: monospace; }
+        .math { font-size: 10px; font-family: monospace; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <a href="../index.html"><< Lake</a>
+    
+    <header style="margin: 30px 0;">
+        <h1>Technical Specification: DeepEven v1.0</h1>
+        <p>Subject: System Parity Analysis via High-Dimensional Weight Matrices // Confidential_Core_Docs</p>
+    </header>
+
+    <div class="grid-master">
+        
+        <div class="space-y">
+            
+            <section class="system-block">
+                <h2>I. ABSTRACT // THEORY_OF_OPERATION</h2>
+                <p>System DeepEven is a hardware-abstracted parity detector. It replaces traditional deterministic CPU logic (<code>modulo(x, 2)</code>) with stochastic, feed-forward matrix algebra. By tokenizing inputs into discrete 16-bit tensors, a single Perceptron calculates the mathematical probability of 'Oddness'.</p>
+                <p style="font-style: italic; color: #444;">Note: Operational energy cost per bit exceeds deterministic methods by 10^7. System is explicitly designed for resource utilization testing.</p>
+            </section>
+
+            <section class="system-block">
+                <h2>II. COMPLEX SCHEMATIC // NEURAL_GRID_v1</h2>
+                <h3>Fig 2.1: Matrix Flow Diagram</h3>
+                <p style="margin-bottom: 10px; font-size: 11px;">Data flow from 16-bit Input Tensor through Weight Matrix ($W$), Bias Shift ($B$), and Sigmoid Rectification.</p>
+                
+                <svg viewBox="0 0 240 180">
+                    <defs>
+                        <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#000"/>
+                        </marker>
+                    </defs>
+
+                    <circle class="node-active" cx="20" cy="90" r="4"/>
+                    <text x="3" y="103" class="label">LSB [X15]</text>
+                    
+                    <circle class="node" cx="20" cy="40" r="3"/>
+                    <text x="5" y="52" class="label">X0</text>
+                    <circle class="node" cx="20" cy="140" r="3"/>
+                    <text x="5" y="152" class="label">X14</text>
+                    <text x="18" y="117" class="label">...</text>
+
+                    <circle class="node" cx="120" cy="90" r="15"/>
+                    <text x="111" y="96" class="math">Σ</text>
+                    <text x="110" y="70" class="label">MATRIX_JCT</text>
+
+                    <line x1="24" y1="90" x2="105" y2="90" class="line" style="stroke-dasharray: 0; stroke-width: 1.2;" marker-end="url(#arrow)"/>
+                    <text x="60" y="86" class="weight-text">W15=+20.0</text>
+                    
+                    <line x1="23" y1="40" x2="105" y2="85" class="line" marker-end="url(#arrow)"/>
+                    <text x="55" y="46" class="weight-text">W0=0.0</text>
+                    <line x1="23" y1="140" x2="105" y2="95" class="line" marker-end="url(#arrow)"/>
+                    <text x="55" y="145" class="weight-text">W14=0.0</text>
+
+                    <line x1="120" y1="20" x2="120" y2="75" class="line" style="stroke-width: 1.2;" marker-end="url(#arrow)"/>
+                    <text x="123" y="30" class="label">Bias: -10.0</text>
+                    <text x="105" y="60" class="math">[Z]</text>
+
+                    <rect x="160" y="80" width="30" height="20" class="node"/>
+                    <text x="163" y="93" class="label">Sigmoid</text>
+                    <line x1="135" y1="90" x2="160" y2="90" class="line" marker-end="url(#arrow)"/>
+
+                    <line x1="190" y1="90" x2="225" y2="90" class="line" marker-end="url(#arrow)"/>
+                    <text x="195" y="85" class="math">P(Odd)</text>
+                    <circle class="node-active" cx="230" cy="90" r="4"/>
+                </svg>
+            </section>
+        </div>
+
+        <div class="space-y">
+            
+            <section class="system-block">
+                <h2>III. OPERATIONAL_INTERFACE // LIVE_INFERENCE</h2>
+                <p style="margin-bottom: 20px;">Enter integer value for parity analysis. System will tokenize and execute forward-propagation on remote PyTorch infrastructure.</p>
+                
+                <div class="system-block" style="background:#f9f9f9; border: 2px solid #000;">
+                    <label class="uppercase font-bold text-xs">INT_INPUT_REG [32-bit]</label>
+                    <input type="number" id="inputVar" placeholder="000" required>
+                    <button id="execBtn" onclick="runInference()">EXEC_NEURAL_FWD</button>
+                </div>
+
+                <div id="statusReport" class="system-block" style="display: none; background: #fff;">
+                    <h4 style="margin-bottom: 10px;">Inference_Report :: Output</h4>
+                    
+                    <div style="margin-bottom: 15px;">
+                        <span class="label">CLASSIFICATION:</span><br>
+                        <span id="prediction" style="font-size: 20px; font-weight: bold; background: #000; color: #fff; padding: 2px 5px;">ODD</span>
+                    </div>
+
+                    <div style="margin-bottom: 10px;">
+                        <span class="label">CONFIDENCE_SCORE [P(ODD)]:</span><br>
+                        <span id="confidence" class="font-bold">--%</span>
+                    </div>
+
+                    <div>
+                        <span class="label">RAW_BINARY_INPUT_TENSOR [LSB=Right]:</span><br>
+                        <div id="binaryView" class="data-stream text-xs">--</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="system-block">
+                <h2>IV. TECHNICAL_SPECIFICATIONS</h2>
+                <ul>
+                    <li>Core Logic: Single-Layer Perceptron (SLP) Feed-Forward Network.</li>
+                    <li>Tokenization: Integer $\rightarrow$ 16-bit normalized floating-point tensor ($$ \in \{0.0, 1.0\} $$).</li>
+                    <li>Weight Priming: Manual $W_{15}$ amplification ($$+20.0$$); $W_{0\dots 14}$ suppression.</li>
+                    <li>Bias Correction: Static manual shift ($$-10.0$$) to establish decision threshold.</li>
+                    <li>Activation Function: Non-Linear Sigmoid rectification.</li>
+
+                </ul>
+            </section>
+        </div>
+
+    </div>
+
+    <script>
+        async function runInference() {
+            const inputVal = document.getElementById('inputVar').value;
+            const btn = document.getElementById('execBtn');
+            const reportDiv = document.getElementById('statusReport');
+            
+            if(!inputVal) return;
+
+            btn.disabled = true;
+            btn.innerText = "CALLING_PYTORCH_INFRA...";
+            
+            try {
+                // Connecting to your remote Space
+                const response = await fetch(`https://GoodBoyCroco-DeepEven.hf.space/predict?number=${inputVal}`);
+                const data = await response.json();
+
+                // Updating UI with brutalist styling
+                document.getElementById('prediction').innerText = data.prediction.toUpperCase();
+                
+                // Handling styling for classification (inverse for ODD, normal for EVEN)
+                if(data.prediction.toUpperCase() === "ODD") {
+                    document.getElementById('prediction').style.background = "#000";
+                    document.getElementById('prediction').style.color = "#fff";
+                } else {
+                    document.getElementById('prediction').style.background = "none";
+                    document.getElementById('prediction').style.color = "#000";
+                    document.getElementById('prediction').style.border = "2px solid #000";
+                }
+
+                document.getElementById('confidence').innerText = data.confidence;
+                document.getElementById('binaryView').innerText = data.binary_view;
+                
+                reportDiv.style.display = 'block';
+            } catch (error) {
+                alert("NEURAL LINKS SEVERED: Check remote infrastructure status.");
+            } finally {
+                btn.disabled = false;
+                btn.innerText = "EXEC_NEURAL_FWD";
+            }
+        }
+    </script>
+
+</body>
+</html>

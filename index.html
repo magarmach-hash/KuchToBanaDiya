@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naveen | Archive</title>
+    <link rel="icon" type="image/jpeg" href="magramach.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono&display=swap');
+        
+        body {
+            background-color: #ffffff;
+            color: #1a1a1a;
+            font-family: 'Inter', sans-serif;
+            padding: 8vw;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .container-grid { grid-template-columns: 1fr; }
+            body { padding: 2rem; }
+            .useful-section { position: relative; top: 0; margin-top: 4rem; }
+        }
+
+        .useful-section {
+            position: sticky;
+            top: 8vw;
+            height: fit-content;
+        }
+
+        a {
+            color: #0000ee;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #551a8b;
+        }
+
+        .terminal-box {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #4b5563;
+            background-color: #f9fafb;
+            padding: 1.25rem;
+            border-left: 3px solid #e5e7eb;
+            margin-bottom: 2.5rem;
+        }
+
+        .misaligned {
+            margin-left: 3.5rem;
+            font-style: italic;
+            opacity: 0.7;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .useful-heading {
+            color: #000;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            border-bottom: 2px solid #000;
+            padding-bottom: 4px;
+            display: inline-block;
+        }
+
+        .floating-logo {
+            transition: all 0.3s ease;
+        }
+        
+        .group:hover .floating-logo {
+            transform: scale(1.05) rotate(-3deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-grid">
+        <div class="space-y-12">
+            <header>
+                <!-- <div class="terminal-box">
+                    $ aws sts get-caller-identity --profile default<br>
+                    <span class="text-red-500">An error occurred (AccessDenied) when calling the GetCallerIdentity operation.</span><br>
+                    $ tail -n 1 /var/log/syslog<br>
+                    [CRITICAL] Unexpected entity 'magarmach' detected in root.
+                </div> -->
+                
+                <h1 class="text-3xl font-black tracking-tighter mb-2">Oh. You're here.</h1>
+                <p class="text-lg">Welcome to the personal wreckage of my digital footprint.</p>
+            </header>
+
+            <section class="max-w-md">
+                <p>There was a version of this site that made sense. Organized sections. A headshot. A PDF resume with correct margins. Skills listed in descending order of confidence.</p>
+                <p class="mt-8">I deleted it.</p>
+                <p class="mt-8">Not because it was hacked. Not because of some server failure I could 
+blame on AWS. I just looked at it one day, decided it was a lie dressed 
+up in Tailwind CSS, and hit rm -rf on the whole thing.<code class="bg-gray-100 px-1 font-mono text-sm">rm -rf</code> on the whole thing.</p>
+                <p class="mt-8">The backups? Also gone. I rm -rf'd those too. Twice.</p>
+            </section>
+
+            <section class="max-w-md">
+                <p class="font-bold border-l-2 border-black pl-4">This is what's left.</p>
+                <p class="mt-4">I build things. Mostly cloud infrastructure that nobody asked for and automation scripts that are one bad regex away from deleting production.</p>
+            </section>
+
+            <section class="max-w-md">
+                <p>I also co-founded <a href="https://accleratech.com" target="_blank">AccleraTech</a>.</p>
+                <p>We are figuring it out.</p>
+                <p class="misaligned">
+                    (This is a polite way of saying we are very much still figuring it out.)
+                </p>
+            </section>
+
+            <section class="max-w-md">
+                <p>I study Computer Science at VIT Chennai. Technically a final year student. Existentially, a work in progress.</p>
+            </section>
+
+            <section class="max-w-md space-y-4">
+                <p class="font-bold text-xl tracking-tight">Cloud & AWS Architecting</p>
+                <p>I architect in the cloud. Which usually means I draw complex diagrams in Lucidchart and then spend three days debugging an IAM policy that I’m 90% sure is correct.</p>
+                <p>I treat servers like cattle, not pets. If something breaks, I don't fix it. I kill it and let the Auto Scaling Group handle the reincarnation.</p>
+            </section>
+
+            <section class="max-w-md pt-8">
+                <p class="text-xs opacity-50 italic mb-8">
+                    (Move your cursor to the underlined text. Click once. Do not refresh. Refreshing implies hope.)
+                </p>
+                
+                <div class="flex flex-col space-y-4 font-bold text-lg">
+                    <a href="https://www.linkedin.com/in/naveen2605/" target="_blank">[LinkedIn — professional theater]</a>
+                    <a href="https://github.com/magarmach-hash" target="_blank">[GitHub — where the bodies are buried]</a>
+                    <a href="https://www.accleratech.com/" target="_blank">[AccleraTech — it's real, I promise]</a>
+                </div>
+            </section>
+
+            <footer class="pt-20 text-[10px] uppercase tracking-widest opacity-30">
+                <p>*This site was built by someone who knows nothing but did it anyway.</p>
+            </footer>
+        </div>
+
+        <div class="useful-section">
+            <h2 class="useful-heading uppercase text-xs mb-10">MIGHT BE USEFUL:</h2>
+            <ul class="space-y-6 text-sm font-mono">
+                <li>
+                    <span class="block text-gray-400 text-[10px] mb-1">LIVE_DEVOPS_CTF</span>
+                    <a href="pages-portfolio/ctf.html">operation_shadow_pipeline</a>
+                </li>
+                <li>
+                    <span class="block text-gray-400 text-[10px] mb-1"></span>
+                    <a href="pages-portfolio/DeepEven.html">Neural_Overkill</a>
+                </li>
+                <li>
+                    <span class="block text-gray-400 text-[10px] mb-1"></span>
+                    <a href="pages-portfolio/aws_root_access_keys">aws_root_access_keys</a>
+                </li>
+                <li>
+                    <span class="block text-gray-400 text-[10px] mb-1"></span>
+                    <a href="https://github.com/magarmach-hash/DUMBIT">DUMBIT</a>
+                </li>
+                <li>
+                    <span class="block text-gray-400 text-[10px] mb-1"></span>
+                    <a href="https://www.youtube.com/watch?v=QDia3e12czc" target="_blank">Hidden Treasure</a>
+                </li>
+                
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="fixed bottom-8 right-8 z-50 group cursor-help">
+        <div class="relative">
+            <img src="magarmach.png" 
+                 alt="Magramach Logo" 
+                 class="floating-logo w-16 h-16 md:w-20 md:h-20 object-contain grayscale group-hover:grayscale-0">
+            
+            <span class="absolute -top-1 -right-1 flex h-4 w-4">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-4 w-4 bg-green-500"></span>
+            </span>
+        </div>
+    </div>
+
+</body>
+</html>
